@@ -17,3 +17,31 @@ p.last-post-timestamp {
     font-size: 9px;
     font-style: italic;
 }
+
+.alert {
+    display: inline-block;
+    width: 100%;
+}
+
+.alert-danger {
+    background-color: #e53935;
+    color: white;
+}
+
+.alert-success {
+    background-color: #00e676;
+    color: white;
+}
+
+.alert > ul {
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+    background-color: #e53935;
+    color: white;
+}
+
+.alert > ul > li {
+    /*list-style: none;*/
+
+}
