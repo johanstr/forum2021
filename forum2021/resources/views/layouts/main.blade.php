@@ -54,8 +54,10 @@
                 </a>
                 @auth
                     <ul id="theme-menu" class="dropdown-content">
-                        <li><a href="">Profiel</a></li>
-                        <li><a href="">Beheer</a></li>
+                        <li><a href="{{ route('profile.edit') }}">Profiel</a></li>
+                        @if(Auth::user()->admin)
+                            <li><a href="{{ route('user.index') }}">Beheer</a></li>
+                        <@endif
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Afmelden</a></li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -63,9 +65,10 @@
                     </ul>
                 @endauth
 
+
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="{{ route('home.index') }}">Home</a></li>
-                    
+
                     @guest
                         <li><a href="{{ route('register') }}">Registreren</a></li>
                         <li><a href="{{ route('login') }}">Aanmelden</a></li>
@@ -74,7 +77,9 @@
                     @auth
                         <li>
                             <a href="/" data-activates="theme-menu" class="dropdown-button">
-                                <img src="http://www.gravatar.com/avatar/fc7d81525f7040b7e34b073f0218084d?s=20" alt="" class="square"> {{ Auth::user()->name }} &dtrif;
+                                <img src="http://www.gravatar.com/avatar/fc7d81525f7040b7e34b073f0218084d?s=20" alt="" class="square">
+                                {{ Auth::user()->name }}
+                                &dtrif;
                             </a>
                         </li>
                     @endauth

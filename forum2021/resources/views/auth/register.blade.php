@@ -7,6 +7,15 @@
         <div class="card-content">
             <div class="row">
                 <form class="col s12" method="POST" action="{{ route('register') }}">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @csrf
                     <h1 class="title">Registreren</h1>
                     <div class="row">

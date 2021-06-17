@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $threads = Thread::with('user')->get();
+        $threads = Thread::with('user', 'topics')->get();
 
         return view('home.index', compact('threads'));
     }

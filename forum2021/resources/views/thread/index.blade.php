@@ -31,7 +31,9 @@
 
                             <div class="col s2">
                                 <h6 class="title center-align">Replies</h6>
-                                <p class="center replies">8</p>
+                                <p class="center replies">
+                                    {{ $topic->replies()->count() }}
+                                </p>
                             </div>
 
                             <div class="col s2">

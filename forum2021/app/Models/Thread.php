@@ -24,4 +24,9 @@ class Thread extends Model
     {
         return $this->hasMany(Topic::class);
     }
+
+    public function count_topics()
+    {
+        return $this->topics()->count();
+    }
 }

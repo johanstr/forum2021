@@ -28,7 +28,7 @@
                             </div>
                             <div class="col s3">
                                 <h6 class="title center-align">Statistieken</h6>
-                                <p class="center-align">26 topics</p>
+                                <p class="center-align">{{ $thread->count_topics() }} topic(s)</p>
                             </div>
                         </div>
                     </a>

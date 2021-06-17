@@ -75,17 +75,11 @@
         <!-- EINDE REPLY -->
         @endforeach
 
-    <!-- TOEVOEGEN VAN EEN REPLY -->
+        @auth
+        <!-- TOEVOEGEN VAN EEN REPLY -->
         <div class="card">
             <div class="card-content">
                 <form method="POST" action="">
-                    <div class="row">
-                        <div class="input-field col s6 has-error">
-                            <input id="title" type="text" name="title" placeholder="Tik hier een titel voor het onderwerp in">
-                            <label for="title" class="active">Titel van de topic</label>
-                            <span>Titel is verplicht!</span>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col s12">
                             <textarea id="message-body" name="body"></textarea>
@@ -102,6 +96,7 @@
             </div>
         </div>
         <!-- EINDE TOEVOEGEN VAN EEN REPLY -->
+        @endauth
     </div>
 @endsection
 

@@ -30,4 +30,9 @@ class Topic extends Model
     {
         return $this->hasMany(Reply::class);
     }
+
+    public function count_replies()
+    {
+        $this->replies()->count();
+    }
 }
